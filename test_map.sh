@@ -11,5 +11,9 @@ if map abbr.exists "USA"; then
 fi
 
 echo "Size of map: $(map abbr.size)"
-echo "Map contains the following keys:"
-map abbr.keys
+
+echo "Map content:"
+for k in $(map abbr.keys); do
+    value=$(map abbr["$k"])
+    echo "  $k --> $value"
+done
